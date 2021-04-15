@@ -24,9 +24,9 @@ public class Vehiculo {
 
     public Vehiculo() {
         this.matricula = generaMatricula();
-        this.marca = "FIAT";
-        this.modelo = "FEO";
-        this.color = "rojo";
+        this.marca = genararMarca();
+        this.modelo = modelo();
+        this.color = generarColor();
         this.tarifa = 2.0;
         this.disponible = true;
     }
@@ -64,7 +64,7 @@ public class Vehiculo {
 
     }
     
-        private static String genrarColor(){
+        private static String generarColor(){
         
         String [] arrayColores = {"naranja","blanco","rojo","azul","verde",
             "amarillo","marron","negro","dorado"};
@@ -80,7 +80,7 @@ public class Vehiculo {
         return color;
     }
     
-    private static String genararMarca(int posicion){
+    private static String genararMarca(){
          String [] arrayMarcas = {"Fiat","Ford","Maserati","Audi","Ferrari",
             "Citroen","Renault","Opel","Mustang"};
        Random aleatorioRD = new Random();
@@ -94,7 +94,7 @@ public class Vehiculo {
         return marca;
     }
     
-    private static String modelo(int posicion){
+    private static String modelo(){
           String [] arrayModelo = {"a1","c3","Giulia","a7","Enzo",
             "B3","Corsa","Zafira","SS"};
        Random aleatorioRD = new Random();
@@ -108,12 +108,12 @@ public class Vehiculo {
         return modelo;
     }
     
-    private static double tarifa(int posicion){
-        String cadena = "2,5,6,10.5,22";
-        String [] lista = cadena.split(",");
-        
-        return Double.parseDouble(lista[posicion]);
-    }
+//    private static double generarTarifa(int posicion){
+//        String cadena = "2,5,6,10.5,22";
+//        String [] lista = cadena.split(",");
+//        
+//        return Double.parseDouble(lista[posicion]);
+//    }
 
 
     public String getMatricula() {

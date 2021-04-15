@@ -43,17 +43,38 @@ public class LecturaVehiculos {
 
                 for (String string : tokens) {
 //                    System.out.print(string + "\t");
-                    tmp.setMatricula(tokens[0]);
-                    tmp.setMarca(tokens[1]);
-                    tmp.setModelo(tokens[2]);
-                    tmp.setColor(tokens[3]);
+                    if (tmp instanceof Turismo) {
+                        tmp.setMatricula(tokens[0]);
+                        tmp.setMarca(tokens[1]);
+                        tmp.setModelo(tokens[2]);
+                        tmp.setColor(tokens[3]);
 
-                    tmp.setTarifa(Double.parseDouble(tokens[4]));
-                    tmp.setDisponible(Boolean.valueOf(tokens[5]));
+                        tmp.setTarifa(Double.parseDouble(tokens[4]));
+                        tmp.setDisponible(Boolean.valueOf(tokens[5]));
+
+                    } else if (tmp instanceof Deportivo) {
+                        tmp.setMatricula(tokens[0]);
+                        tmp.setMarca(tokens[1]);
+                        tmp.setModelo(tokens[2]);
+                        tmp.setColor(tokens[3]);
+
+                        tmp.setTarifa(Double.parseDouble(tokens[4]));
+                        tmp.setDisponible(Boolean.valueOf(tokens[5]));
+
+                    } else if (tmp instanceof Turismo) {
+                        tmp.setMatricula(tokens[0]);
+                        tmp.setMarca(tokens[1]);
+                        tmp.setModelo(tokens[2]);
+                        tmp.setColor(tokens[3]);
+
+                        tmp.setTarifa(Double.parseDouble(tokens[4]));
+                        tmp.setDisponible(Boolean.valueOf(tokens[5]));
+
+                    }
 
                 }
 //                System.out.println();
-                    listaVehiculos.add(tmp);
+                listaVehiculos.add(tmp);
 
             }
         } catch (FileNotFoundException e) {
